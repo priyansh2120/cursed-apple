@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Hangout AI Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Your AI-powered travel guide with AI-generated itineraries for Jakarta, Singapore, and Kuala Lumpur. With over 500+ locations in our database, our AI curates a seamless travel experience just for you.
 
-## Available Scripts
+[Hangout AI](https://hangout-ai.vercel.app/)  
+[Hangout AI on Devpost](https://devpost.com/software/hangout-ai)
 
-In the project directory, you can run:
+Table of contents
+- [User Interface](#user-interface)
+- [List Tech Stack](#list-tech-stack)
+- [How To Run](#how-to-run)
 
-### `npm start`
+## User Interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Landing Page 
+![landingpage](./screenshot/landingpage.png)
+> Users need to log in with the Google Sign-In option that we provide.  
+> Note : We will change the YouTube link after we finish recording.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Chat Page 
+![chat](./screenshot/home.png)
+![form](./screenshot/form.png)
+> We set the default location to Jakarta, but if the user changes it to Singapore or Kuala Lumpur, the city illustration will change as well.
+<br/>
+<br/>
+![loading](./screenshot/loading.png)
+![chat-response](./screenshot/chat.png)
+![chat-before-preview](./screenshot/chat-beforepreview.png)
+> Users can continue chatting with the AI, for example, by asking for a table. We have a preview button to show an image of the mentioned location or open a new tab to view the location on Google for more details and reviews.
+<br/>
+<br/>
+![chat-preview](./screenshot/chatpreview.png)
 
-### `npm test`
+## List Tech Stack
+- React JS
+- Vite
+- Tailwind CSS
+- Leaflet 
+- Google Map
+- React Flowbite
+- React MArkdown 
+- Google Oauth 
+- Firebase Google Analytic
+- Vercel 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How To Run 
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Git clone this repository 
+2. Open the code folder / repo and run 
+```bash 
+$ npm install 
+```
+3. Create file .env with this template 
+```
+VITE_GROQ=
+VITE_GMAP=
+VITE_PUBLIC_KEY_TIDB=
+VITE_PRIVATE_KEY_TIDB=
+VITE_YOUTUBE=
+VITE_FIREBASE_API_KEY=
+```
+4. Run the code with this command line
+```bash
+$ npm run dev
+```
