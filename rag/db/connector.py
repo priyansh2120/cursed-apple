@@ -105,9 +105,15 @@ def get_destination_by_cid(cid):
 
 # Get data from CIDs
 def get_data_from_cids(cids):
-    with open("./data/destinations.json", "r") as file:
+    with open("./data/moredestinations.json", "r") as file:
         data = json.load(file)
         results = []
+        for cid in cids:
+            for item in data:
+                if item["cid"] == cid:
+                    results.append(item)
+    with open("./data/destinations.json", "r") as file:
+        data = json.load(file)
         for cid in cids:
             for item in data:
                 if item["cid"] == cid:
@@ -160,10 +166,10 @@ def query_retry_handler(
         )
         metadata_ids = [value["id"] for value in response.metadata.values()]
         source_node_ids = [node.node.metadata["id"] for node in response.source_nodes]
-
+        print("metadata_ids")
         print(metadata_ids)
         print(source_node_ids)
-
+        print(get_data_from_cids(list(set(metadata_ids + source_node_ids))))
         return {
             "response": response.response,
             "metadata": get_data_from_cids(list(set(metadata_ids + source_node_ids))),
