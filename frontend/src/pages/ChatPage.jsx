@@ -1,10 +1,37 @@
 import { useEffect, useState } from "react";
 import saveIt from "../helpers/saveIt";
 import NavBarChat from "../components/NavBarChat"
-import background from "../assets/background.png";
-import jakarta from "../assets/jakarta.png";
-import kualalumpur from "../assets/kualalumpur.png";
-import singapore from "../assets/singapore.png";
+import background from "../assets/Cyberpunk Indian version, Amit Pasi.jfif";
+import andhra from "../assets/andhra.jpg";
+import arunachal from "../assets/arunachal.jpg";
+import assam from "../assets/assam.jpg";
+import bihar from "../assets/bihar.jpg";
+import chhatishgarh from "../assets/chhatishgarh.jpg";
+import delhi from "../assets/delhi.jpg";
+import goa from "../assets/goa.jpg";
+import gujart from "../assets/gujrat.jpg";
+import haryana from "../assets/haryana.jpg";
+import himachalpradesh from "../assets/himachalpradesh.jpg";
+import jharkhand from "../assets/jharkhand.jpg";
+import jnk from "../assets/jnk.jpg";
+import karnataka from "../assets/karnataka.jpg";
+import kerala from "../assets/kerala.jpg";
+import madhyapradesh from "../assets/madhya-pradesh.jpg";
+import maharashtra from "../assets/maharashtra.jpg";
+import manipur from "../assets/manipur.jpg";
+import meghalaya from "../assets/meghalaya.jpg";
+import mizoram from "../assets/mizoram.jpg";
+import nagaland from "../assets/nagaland.jpg";
+import odisha from "../assets/odisha.jpg";
+import punjab from "../assets/punjab.jpg";
+import rajasthan from "../assets/rajasthan.jpg";
+import sikkim from "../assets/sikkim.jpg";
+import tamilnadu from "../assets/tamil-nadu.jpg";
+import tripura from "../assets/tripura.jpg";
+import uttarpradesh from "../assets/uttar-pradesh.jpg";
+import uttarakhand from "../assets/uttarakhand.jpg";
+import westbengal from "../assets/west-bengal.jpg";
+
 import ModalForm from "../components/ModalForm";
 import formatDate from "../helpers/formatDate";
 import getPreview from "../helpers/serverless"
@@ -15,12 +42,12 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 let defaultMessage = [
   {
-    "content": "I am an AI called **Hangout AI** will help you to generate itenary from preferences day, time, and location.\n### How to Use \n1. Edit the preference form by clicking the edit icon or the box.\n2. Fill out the preference form.\n3. The details of your preferences will update, including the city's illustration.\n4. Click the Generate button to start a new chat and create your itinerary.\n5. Your chat will not be reset after generating the itinerary, unlike this channel chat.\n6. Enjoy generate itinerary!",
+    "content": "I am an AI called **Travel Ease** will help you to generate itinirary from preferences day, time, and location.\n### How to Use \n1. Edit the preference form by clicking the edit icon or the box.\n2. Fill out the preference form.\n3. The details of your preferences will update, including the city's illustration.\n4. Click the Generate button to start a new chat and create your itinerary.\n5. Your chat will not be reset after generating the itinerary, unlike this channel chat.\n6. Enjoy generate itinerary!",
     "role": "system"
   }
 ]
 export default function Page() {
-  let text = "Loading.. Loading.. Loading.."
+  let text = "Loading.."
   let [chatId, setChatId] = useState('')
   const [openPreview, setPreview] = useState(false)
   const [dataPreview, setDataPreview] = useState([])
@@ -38,13 +65,41 @@ export default function Page() {
     startTime: "15:00",
     endTime: "22:00",
     date: new Date().toDateString(),
-    latlng: { lat: 18.558390, lng: 73.781888 },
+    latlng: { lat: 15.496777, lng: 73.827827 },
+    state: "Goa",
   });
   let locations = {
-    Goa: jakarta,
-    Kerela: singapore,
-    Laddakh: kualalumpur,
+    "Andhra Pradesh": andhra,
+    "Arunachal Pradesh": arunachal,
+    "Assam": assam,
+    "Bihar": bihar,
+    "Chhattisgarh": chhatishgarh,
+    "Delhi": delhi,
+    "Goa": goa,
+    "Gujarat": gujart,
+    "Haryana": haryana,
+    "Himachal Pradesh": himachalpradesh,
+    "Jharkhand": jharkhand,
+    "Jammu and Kashmir": jnk,
+    "Karnataka": karnataka,
+    "Kerala": kerala,
+    "Madhya Pradesh": madhyapradesh,
+    "Maharashtra": maharashtra,
+    "Manipur": manipur,
+    "Meghalaya": meghalaya,
+    "Mizoram": mizoram,
+    "Nagaland": nagaland,
+    "Odisha": odisha,
+    "Punjab": punjab,
+    "Rajasthan": rajasthan,
+    "Sikkim": sikkim,
+    "Tamil Nadu": tamilnadu,
+    "Tripura": tripura,
+    "Uttar Pradesh": uttarpradesh,
+    "Uttarakhand": uttarakhand,
+    "West Bengal": westbengal
   };
+  const [state, setState] = useState("Goa")
 
   const fetchChatId = async (id) => {
     try {
@@ -70,6 +125,7 @@ export default function Page() {
 
       setChatId(id)
     } catch (error) {
+      console.log(error);
     }
   }
   const moveId = async (id) => {
@@ -108,11 +164,12 @@ export default function Page() {
           id: "",
           name: "First Chat",
           date: new Date().toLocaleDateString("en-EN"),
-          subhead: "How To Use Hangout AI"
+          subhead: "How To Use Travel EASE"
         },
         ...listing
       ])
     } catch (error) {
+      console.log(error);
     } finally {
       setLoadingList(false)
     }
@@ -171,8 +228,10 @@ export default function Page() {
       setGenerate(false)
       setMessages(response.data.messages)
       setChatId(response.data.id)
+      console.log(response.data.id);
       setLoadingPanel(false)
     } catch (error) {
+      console.log(error);
     }
   }
 
@@ -194,7 +253,7 @@ export default function Page() {
       console.log(el.link);
       setTimeout(() => {
         window.open(el.link, '_blank');
-      }, index * 500); // Delay each tab by 500ms
+      }, index * 500);
     })
   }
 
@@ -209,16 +268,16 @@ export default function Page() {
 
   return (
     <div
-      style={{ backgroundImage: `url(${background})`, backgroundRepeat: "no-repeat", backgroundSize: "100%" }}
+      style={{ backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundPosition: "center bottom -90px" }}
       className="bg-bottom sm:bg-opacity-80 md:bg-opacity-0 px-4 py-5 md:px-12 md:pt-8 md:pb-6 sm:min-h-[100vh] h-[100vh] flex flex-col items-center"
     >
-      <ModalForm data={data} setData={setData} openModal={openModal} setOpenModal={setOpenModal} />
+      <ModalForm data={data} setData={setData} openModal={openModal} setOpenModal={setOpenModal} setState={setState} state={state}/>
       <NavBarChat />
       <div className="flex-grow grid grid-cols-1 md:grid-cols-12 gap-4 w-full px-4 2xl:gap-8">
         <div className="col-span-12 md:col-span-3 flex flex-col space-y-4 md:space-y-2 2xl:gap-4">
           <div className="rounded">
             <p className="text-white text-justify font-myriadl 2xl:text-lg">
-              Make your travel plans to Jakarta, Singapore, and Kuala Lumpur with our AI
+              Make your travel plans to various states of India with our AI
               Travel Assistant. Tailored to your preferences, let us be your
               guide and discover the world in a way that feels just right for
               you.
@@ -226,8 +285,8 @@ export default function Page() {
           </div>
           <div className="border-gradient flex-grow">
             <div className="bg-dark w-full h-full flex flex-col items-center justify-center gap-2 2xl:gap-4 py-3">
-              <img className="sm:h-18" src={locations[data.location]} alt={data.location} />
-              <p className="text-xl text-white font-bold font-conthrax">{data.location}</p>
+              <img className="sm:h-18" src={locations[data.state]} alt={data.location} />
+              <p className="text-xl text-white font-bold font-conthrax">{data.state}, {data.location}</p>
             </div>
           </div>
           <div className="border-gradient py-2 2xl:py-10 flex flex-col ">
@@ -316,7 +375,7 @@ export default function Page() {
                           <div key={i} className="aianswer flex flex-col w-full rounded-lg p-1.5">
                             <div className="flex items-center gap-2 py-2">
                               <div className="ml-2 circleai w-8 h-8 rounded-full"></div>
-                              <p className="text-white font-conthrax text-[12px]">HANGOUT AI</p>
+                              <p className="text-white font-conthrax text-[12px]">Travel Ease</p>
                             </div>
                             <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} className="prose px-3 py-2 !text-white max-w-full">{el.content}</Markdown>
                             {
@@ -364,7 +423,7 @@ export default function Page() {
                       <div className="aianswer flex flex-col w-full rounded-lg p-1.5">
                         <div className="flex items-center gap-2 py-2">
                           <div className="ml-2 circleai w-8 h-8 rounded-full"></div>
-                          <p className="text-white font-conthrax text-[12px]">HANGOUT AI</p>
+                          <p className="text-white font-conthrax text-[12px]">TRAVEL EASE</p>
                         </div>
                         <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} className="prose px-3 py-2 !text-white max-w-full">Loading ...</Markdown>
                       </div>
@@ -455,9 +514,9 @@ export default function Page() {
           </div>
         </div>
       </div >
-      < footer className="md:hidden mt-8 text-center text-white text-sm" >
-        & copy; 2024 Hangout AI.All rights reserved.
-      </footer >
+      <footer className="md:hidden mt-8 text-center text-white text-sm" >
+        Travel Ease
+      </footer>
     </div >
   );
 }

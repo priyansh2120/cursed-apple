@@ -11,7 +11,7 @@ export default function Component() {
   return (
     <div className="flex flex-col md:flex-row justify-between w-full px-4 py-4 text-white">
       <h1 className="text-3xl md:text-4xl font-bold font-conthrax">
-        HANGOUT AI
+        TRAVEL <span className="text-black">EASE</span> 
       </h1>
       <div className="flex mt-2 md:mt-0 space-x-4 md:space-x-8 font-myriad mb-3 md:mb-0">
         <Link to="/chats" className="cursor-pointer text-sm md:text-lg hover:text-[#52EDF2]">

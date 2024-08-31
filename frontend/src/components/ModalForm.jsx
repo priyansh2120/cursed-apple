@@ -81,13 +81,14 @@ const LocationMarker = ({ setLocation, setLocationStr }) => {
   });
   return null;
 };
+const states = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"];
 
 
-export default function Component({ setOpenModal, openModal, data, setData }) {
+export default function Component({ setOpenModal, openModal, data, setData, setState, state }) {
   const [start, setStart] = useState("15:00")
   const [end, setEnd] = useState("22:00")
   const [locationStr, setLocationStr] = useState("")
-  const [city, setCity] = useState("IND")
+  const [city, setCity] = useState("India")
   const [date, setDate] = useState(formatDate(new Date()))
   function onCloseModal() {
     setOpenModal(false);
@@ -104,7 +105,8 @@ export default function Component({ setOpenModal, openModal, data, setData }) {
         startTime: start,
         endTime: end,
         latlng: location,
-        address: locationStr
+        address: locationStr,
+        state: state
       }
       setData(dataTemp)
       setOpenModal(false)
@@ -125,14 +127,37 @@ export default function Component({ setOpenModal, openModal, data, setData }) {
   }, []);
 
   useEffect(() => {
-    if (city === "IND") {
-      setCenter(new L.LatLng(18.558390, 73.781888))
-    } else if (city === "Singapore") {
-      setCenter(new L.LatLng(1.290270, 103.851959))
-    } else if (city === "Kuala Lumpur") {
-      setCenter(new L.LatLng(3.140853, 101.693207))
-    }
-  }, [city])
+    if(state==="Andhra Pradesh") setCenter([15.9129, 79.7400])
+    if(state==="Arunachal Pradesh") setCenter([28.2180, 94.7278])
+    if(state==="Assam") setCenter([26.2006, 92.9376])
+    if(state==="Bihar") setCenter([25.0961, 85.3131])
+    if(state==="Chhattisgarh") setCenter([21.2787, 81.8661])
+    if(state==="Delhi") setCenter([28.7041, 77.1025])
+    if(state==="Goa") setCenter([15.2993, 74.1240])
+    if(state==="Gujarat") setCenter([22.2587, 71.1924])
+    if(state==="Haryana") setCenter([29.0588, 76.0856])
+    if(state==="Himachal Pradesh") setCenter([31.1048, 77.1734])
+    if(state==="Jharkhand") setCenter([23.6102, 85.2799])
+    if(state==="Karnataka") setCenter([15.3173, 75.7139])
+    if(state==="Kerala") setCenter([10.8505, 76.2711])
+    if(state==="Madhya Pradesh") setCenter([22.9734, 78.6569])
+    if(state==="Maharashtra") setCenter([19.7515, 75.7139])
+    if(state==="Manipur") setCenter([24.6637, 93.9063])
+    if(state==="Meghalaya") setCenter([25.4670, 91.3662])
+    if(state==="Mizoram") setCenter([23.1645, 92.9376])
+    if(state==="Nagaland") setCenter([26.1584, 94.5624])
+    if(state==="Odisha") setCenter([20.9517, 85.0985])
+    if(state==="Punjab") setCenter([31.1471, 75.3412])
+    if(state==="Rajasthan") setCenter([27.0238, 74.2179])
+    if(state==="Sikkim") setCenter([27.5330, 88.5122])
+    if(state==="Tamil Nadu") setCenter([11.1271, 78.6569])
+    if(state==="Tripura") setCenter([23.9408, 91.9882])
+    if(state==="Uttar Pradesh") setCenter([26.8467, 80.9462])
+    if(state==="Uttarakhand") setCenter([30.0668, 79.0193])
+    if(state==="West Bengal") setCenter([22.9868, 87.8550])
+    
+
+  }, [state])
   return (
     <Modal className="font-myriad" theme={object} show={openModal} size="md" onClose={onCloseModal} popup>
       <Modal.Header />
@@ -144,7 +169,12 @@ export default function Component({ setOpenModal, openModal, data, setData }) {
               <Label htmlFor="location" value="Select Location" />
             </div>
             <Select className="cursor-pointer" onChange={(e) => setCity(e.target.value)} value={city} id="location" required>
-              <option value="IND">India</option>
+              <option value="India"> India</option>
+            </Select>
+            <Select className="cursor-pointer" onChange={(e) => setState(e.target.value)} value={state} id="location" required>
+              {states.map((el, idx) => (
+                <option key={idx} value={el}>{el}</option>
+              ))}
             </Select>
 
           </div>

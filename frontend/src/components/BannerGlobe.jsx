@@ -1,7 +1,7 @@
-import hangout from "../assets/hangout.png";
+import hangout from "../assets/Gemini_Generated_Image_ujrbbrujrbbrujrb.jfif";
 import pink from "../assets/bulletpink.png"
 import blue from "../assets/bulletblue.png"
-import floor from "../assets/floor.png"
+import floor from "../assets/floow.jpg"
 import { useNavigate } from "react-router-dom";
 
 export default function Component({ login }) {
@@ -16,9 +16,9 @@ export default function Component({ login }) {
   return (
     <>
       <div className="text-center mt-10 cursor-pointer">
-        <h1 className="text-5xl sm:max-w-[320px] md:max-w-[80%] font-bold font-conthrax m-auto">HANGOUT AI</h1>
+        <h1 className="text-5xl sm:max-w-[320px] md:max-w-[80%] font-bold font-conthrax m-auto">TRAVEL EASE</h1>
         <p className="text-xl mt-8 max-w-[300px] md:max-w-full m-auto">
-          Plan your next adventure effortlessly with Hangout AI.<br />Tailor your trips to perfection using our intelligent travel assistant.
+          Plan your next adventure effortlessly with Travel Ease.<br />Tailor your trips to perfection using our intelligent travel assistant.
         </p>
       </div>
       <div className="hidden md:flex ">
@@ -52,7 +52,7 @@ export default function Component({ login }) {
         <img
           src={floor}
           alt="floor"
-          className="sm:hidden xl:flex md:h-[90px] w-full left-0 md:bottom-[-70px] 2xl:bottom-0 absolute"
+          className="sm:hidden xl:flex md:h-[200px] w-full left-0 md:bottom-[-70px] 2xl:bottom-0 absolute"
         />
       </div>
     </>
