@@ -69,12 +69,10 @@ class ControllerUser {
 
   static async generate(req, res, next) {
     try {
-      let { startTime, endTime, location, date, address, latlng } = req.body
-      let code = {
-        "India":"IN"
-      }
+      let { startTime, endTime, location, date, address, latlng, state } = req.body
+  
       let country = "IN"
-
+     
 
       const config = {
         method: 'post',
@@ -88,9 +86,10 @@ class ControllerUser {
           country,
           startTime,
           endTime,
-          address: address || "Buaran Plaza",
+          address: address || location,
           lat: latlng.lat,
           lng: latlng.lng,
+
         }
       };
       let { data } = await axios(config)
@@ -101,7 +100,7 @@ class ControllerUser {
         content: `### Itenary Preference \n- Location: ${location}\n- Date: ${date}\n- Time: ${startTime} - ${endTime} (${duration})`,
         latlng
       }
-      let name = `${location},${new Date(date).toLocaleDateString('en-GB')},${startTime},${endTime}`
+      let name = `${state} ${location},${new Date(date).toLocaleDateString('en-GB')},${startTime},${endTime}`
       let list = metadata.map(el => {
         return {
           cid: el.cid,
