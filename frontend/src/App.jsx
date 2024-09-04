@@ -13,7 +13,7 @@ function App() {
     }
   }, [])
   return (
-    <GoogleOAuthProvider clientId="1091646798667-prjuivp5pla0r1rcq4dboc19pau5k818.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId= {import.meta.env.GOOGLE_CLIENT_ID} >
       <section className=''>
         <Outlet />
       </section>

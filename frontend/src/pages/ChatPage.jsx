@@ -284,7 +284,7 @@ export default function Page() {
           </div>
           <div className="border-gradient flex-grow">
             <div className="bg-dark w-full h-full flex flex-col items-center justify-center gap-2 2xl:gap-4 py-3">
-              <img className="sm:h-18" src={locations[data.state]} alt={data.location} />
+              <img className="sm:h-14 rounded-full" src={locations[data.state]} alt={data.location} />
               <p className="text-xl text-[#53351f] font-bold font-conthrax">{data.state}, {data.location}</p>
             </div>
           </div>

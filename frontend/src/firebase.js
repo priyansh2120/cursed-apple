@@ -4,13 +4,13 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAW3vTRn4YFGvvQg1AM7Ntv5sXoxxY2EZA",
-  authDomain: "travel-itinerary-rag.firebaseapp.com",
-  projectId: "travel-itinerary-rag",
-  storageBucket: "travel-itinerary-rag.appspot.com",
-  messagingSenderId: "1026770078819",
-  appId: "1:1026770078819:web:4f478837f666ed1c793c56",
-  measurementId: "G-XQZ2FRFFXL"
+  apiKey: import .meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import .meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import .meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import .meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import .meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import .meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import .meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
