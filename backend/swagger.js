@@ -4,7 +4,7 @@ const swaggerSpec = swaggerJSDoc({
     definition: {
         openapi: '3.0.0',
         info: {
-            title: 'Hangout-AI Server',
+            title: 'Travel Ease Server',
             version: '1.0.0',
             description: 'API documentation for your Node.js application',
         },

@@ -17,11 +17,13 @@ strong {
   color: white !important;
 
 }
-
 .border-gradient {
   position: relative;
-  background-color: rgba(24, 17, 17, 0.72);
+  background-color: rgb(245, 238, 200); /* Retro yellowish background */
   padding: 5px 10px;
+  border-radius: 10px; /* Smooth edges */
+  color: #FAF3E0; /* Light off-white text color */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25); /* Soft shadow */
 }
 
 .border-gradient::before {
@@ -30,7 +32,7 @@ strong {
   inset: 0;
   border-radius: 10px;
   padding: 3px;
-  background: linear-gradient(180deg, #29A1C7, #B85CA7);
+  background: linear-gradient(180deg, #f2ebd1, #f8c68a); /* Retro gradient */
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#ffffff 0 0);
@@ -38,19 +40,35 @@ strong {
   mask-composite: exclude;
 }
 
+/* Retro Style for AI Answer Box */
 .aianswer {
-  border: 2px solid #A3E8EB;
-  background: linear-gradient(180deg, #1A1C22 0%, #1E1822 70.5%, #1B3463 100%);
+  border: 2px solid #E6DFA9; /* Soft yellowish border */
+  background: linear-gradient(180deg, #fac400 0%, #d07200 100%); /* Light retro gradient */
+  color: #432d1d; /* Darker retro text color */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25); /* Similar soft shadow */
 }
 
+/* Retro Style for AI Circle */
 .circleai {
-  background: linear-gradient(180deg, #64DFE7 0%, #0E757E 100%);
+  background: linear-gradient(180deg, #927c00 0%, #f49600 100%); /* Retro yellow-orange gradient */
+  color: #FAF3E0; /* Light off-white text color */
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25); /* Shadow for depth */
 }
 
+/* Retro Style for User Chat */
 .userchat {
-  border: 2px solid #8dbfe9;
-  background: linear-gradient(180deg, #06282F 0%, #127E95 100%);
+  border: 2px solid #E6DFA9; /* Soft yellowish border */
+  background: linear-gradient(180deg, #fac400 0%, #d07200 100%); /* Warm retro gradient */
+  color: #432d1d; /* Darker retro text color */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25); /* Similar soft shadow */
 }
+
 
 /* LoadingAnimation.css */
 
@@ -59,6 +77,8 @@ strong {
   font-family: 'Courier New', Courier, monospace;
   font-size: 24px;
   white-space: nowrap;
+  background: linear-gradient(180deg, #fac400 0%, #d07200 100%);
+  
 }
 
 .letter {
@@ -98,4 +118,31 @@ strong {
   100% {
     opacity: 1;
   }
+}
+.markdown {
+  color:  #432d1d;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  color:  #432d1d;
+}
+
+.markdown p,
+.markdown ol,
+.markdown ul,
+.markdown li {
+  color:  #432d1d;
+}
+
+.markdown a {
+  color:  #432d1d;
+}
+
+.markdown strong {
+  color:  #432d1d;
 }

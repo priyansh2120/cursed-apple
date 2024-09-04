@@ -24,12 +24,15 @@ export default function Component({ keyname }) {
   };
   
   return (
-    <div className="py-4 gap-1.5 border-gradient flex-1 flex flex-col justify-center md:items-center">
-      <div className="flex justify-center items-center gap-2 ">
-        <img className="w-16 h-16" src={data[keyname].img}  alt="huh"/>
-        <p className="text-md font-conthrax">{keyname}</p>
-      </div>
-      <p className="font-myriad mb-2 text-justify">{data[keyname].message}</p>
-    </div>
+    <div className="py-4 gap-1.5 flex-1 flex flex-col justify-center md:items-center">
+  <div className="flex justify-center items-center gap-2 bg-[#362315] bg-opacity-30 p-4 rounded-md">
+    <img className="w-16 h-16" src={data[keyname].img} alt="huh" />
+    <p className="text-md font-conthrax text-#264653">{keyname}</p>
+  </div>
+  <p className="font-myriad mb-2 text-justify text-[#393708] bg-[#362315] bg-opacity-20 p-4 rounded-md">
+    {data[keyname].message}
+  </p>
+</div>
+
   );
 }

@@ -268,15 +268,14 @@ export default function Page() {
 
   return (
     <div
-      style={{ backgroundImage: `url(${background})`, backgroundSize: "cover", backgroundPosition: "center bottom -90px" }}
-      className="bg-bottom sm:bg-opacity-80 md:bg-opacity-0 px-4 py-5 md:px-12 md:pt-8 md:pb-6 sm:min-h-[100vh] h-[100vh] flex flex-col items-center"
+      className="bg-[url('https://i.imgur.com/c89MDBb.jpeg')] sm:bg-opacity-80 md:bg-opacity-0 px-4 py-5 md:px-12 md:pt-8 md:pb-6 sm:min-h-[100vh] flex flex-col items-center"
     >
       <ModalForm data={data} setData={setData} openModal={openModal} setOpenModal={setOpenModal} setState={setState} state={state}/>
       <NavBarChat />
       <div className="flex-grow grid grid-cols-1 md:grid-cols-12 gap-4 w-full px-4 2xl:gap-8">
         <div className="col-span-12 md:col-span-3 flex flex-col space-y-4 md:space-y-2 2xl:gap-4">
           <div className="rounded">
-            <p className="text-white text-justify font-myriadl 2xl:text-lg">
+            <p className="text-[#53351f] text-justify font-myriadl 2xl:text-lg">
               Make your travel plans to various states of India with our AI
               Travel Assistant. Tailored to your preferences, let us be your
               guide and discover the world in a way that feels just right for
@@ -286,14 +285,14 @@ export default function Page() {
           <div className="border-gradient flex-grow">
             <div className="bg-dark w-full h-full flex flex-col items-center justify-center gap-2 2xl:gap-4 py-3">
               <img className="sm:h-18" src={locations[data.state]} alt={data.location} />
-              <p className="text-xl text-white font-bold font-conthrax">{data.state}, {data.location}</p>
+              <p className="text-xl text-[#53351f] font-bold font-conthrax">{data.state}, {data.location}</p>
             </div>
           </div>
           <div className="border-gradient py-2 2xl:py-10 flex flex-col ">
             <div className="cursor-pointer text-white p-3 rounded-lg flex flex-col  font-myriad">
               <div onClick={() => openTheModal()} className="z-50 mt-0 cursor-pointer p-2.5 rounded-lg flex flex-col justify-between items-between font-myriad cursor-pointer gap-0.5">
-                <span className="flex gap-2 text-md 2xl:text-xl font-conthrax">EDIT YOUR PREFERENCE <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M17.2583 5.8668C17.5833 5.5418 17.5833 5.00013 17.2583 4.6918L15.3083 2.7418C15 2.4168 14.4583 2.4168 14.1333 2.7418L12.6 4.2668L15.725 7.3918M2.5 14.3751V17.5001H5.625L14.8417 8.27513L11.7167 5.15013L2.5 14.3751Z" fill="white" />
+                <span className="flex gap-2 text-md 2xl:text-xl font-conthrax text-[#264653]">EDIT YOUR PREFERENCE <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M17.2583 5.8668C17.5833 5.5418 17.5833 5.00013 17.2583 4.6918L15.3083 2.7418C15 2.4168 14.4583 2.4168 14.1333 2.7418L12.6 4.2668L15.725 7.3918M2.5 14.3751V17.5001H5.625L14.8417 8.27513L11.7167 5.15013L2.5 14.3751Z" fill="#264653" />
                 </svg></span>
                 <div className="flex flex-col gap-4 py-4">
                   <div className="flex items-center gap-3">
@@ -303,8 +302,8 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-medium">Location</p>
-                      <p className="text-lg font-myriadb">{data.location}</p>
+                      <p className="font-large font-bold text-[#432d1d]">Location</p>
+                      <p className="text-lg font-myriadb text-[#4f290e]">{data.location}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -315,8 +314,8 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-medium">Date</p>
-                      <p className="text-lg font-myriadb">{formatDate(data.date)}</p>
+                      <p className="font-large font-bold text-[#432d1d]">Date</p>
+                      <p className="text-lg font-myriadb text-[#4f290e]">{formatDate(data.date)}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -326,12 +325,12 @@ export default function Page() {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-medium">Start Time</p>
-                      <p className="text-lg font-myriadb">{data.startTime}</p>
+                      <p className="font-large font-bold text-[#432d1d]">Start Time</p>
+                      <p className="text-lg font-myriadb text-[#4f290e]">{data.startTime}</p>
                     </div>
                     <div className='ml-3'>
-                      <p className="font-medium ">End Time</p>
-                      <p className="text-lg font-myriadb">{data.endTime}</p>
+                      <p className="font-large font-bold text-[#432d1d] ">End Time</p>
+                      <p className="text-lg font-myriadb text-[#4f290e]">{data.endTime}</p>
                     </div>
                   </div>
                 </div>
@@ -354,7 +353,9 @@ export default function Page() {
                       if (el.latlng) iframeSrc = `https://www.google.com/maps/embed/v1/place?q=${el.latlng.lat},${el.latlng.lng}&key=${import.meta.env.VITE_GMAP}`
                       if (el.role === "user") {
                         return <div key={i} className="flex flex-col rounded-lg max-w-5/6 self-end userchat py-2 px-3">
-                          <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} className="prose px-3 py-2 !text-white">{el.content}</Markdown>
+                        <div className="markdown">
+                          <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} className="prose px-3 py-2 markdown">{el.content}</Markdown>
+                          </div>
                           {
                             el.latlng && (
                               <iframe
@@ -375,13 +376,15 @@ export default function Page() {
                           <div key={i} className="aianswer flex flex-col w-full rounded-lg p-1.5">
                             <div className="flex items-center gap-2 py-2">
                               <div className="ml-2 circleai w-8 h-8 rounded-full"></div>
-                              <p className="text-white font-conthrax text-[12px]">Travel Ease</p>
+                              <p className=" font-conthrax text-[12px] text-[#264653]">Travel Ease</p>
                             </div>
-                            <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} className="prose px-3 py-2 !text-white max-w-full">{el.content}</Markdown>
+                            <div className="markdown">
+                              <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} className="prose px-3 py-2  max-w-full markdown">{el.content}</Markdown>
+                            </div>
                             {
                               el.metadata && (
                                 <div className="ml-4 p-3 border-s-4 mt-3 mb-4">
-                                  <b className="!text-[#A3E8EB]">Metionable :</b>
+                                  <b className="!text-[#534123]">Metionable :</b>
                                   <ul className="my-1">
                                     {
                                       el.metadata.map((el, j) => <li key={j}>- {el.name}</li>)
@@ -398,7 +401,7 @@ export default function Page() {
                                           dataPreview.map(el => {
                                             let { title, images } = el
                                             return (
-                                              <div key={el.cid} className="text-white mb-2">
+                                              <div key={el.cid} className="text-[#805f48] mb-2">
                                                 <p>{title} ({el.category})</p>
                                                 <div className="overflow-x-scroll flex h-44 sm:w-[300px] md:w-[96%]">
                                                   {images.map(e => <img key={e.title} src={e.image} alt={e.title} onError={remove} />)}
@@ -423,15 +426,15 @@ export default function Page() {
                       <div className="aianswer flex flex-col w-full rounded-lg p-1.5">
                         <div className="flex items-center gap-2 py-2">
                           <div className="ml-2 circleai w-8 h-8 rounded-full"></div>
-                          <p className="text-white font-conthrax text-[12px]">TRAVEL EASE</p>
+                          <p className="text-[#805f48] font-conthrax text-[12px]">TRAVEL EASE</p>
                         </div>
-                        <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} className="prose px-3 py-2 !text-white max-w-full">Loading ...</Markdown>
+                        <Markdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} className="prose px-3 py-2 text-[#805f48] max-w-full markdown"><span>Loading ..</span></Markdown>
                       </div>
                     )
                   }
                 </div>
               ) : (
-                <div className="m-auto flex flex-col justify-center items-center p-2 md:p-6 text-white flex-grow">
+                <div className="m-auto flex flex-col justify-center items-center p-2 md:p-6 text-[#805f48] flex-grow">
                   <div className="flex flex-col justify-center border-gradient loading-container m-auto text-xl">
                     <div className="flex justify-center loading-container font-conthrax p-4">
                       {text.split('').map((letter, index) => (
@@ -450,7 +453,7 @@ export default function Page() {
             }
           </div>
           <div className="bottom-0 relative h-28">
-            <textarea value={inputText} onChange={(e) => setInputText(e.target.value)} className="absolute w-full h-28 py-2 px-2.5 text-white font-myriadl bg-[#1A1C22] border border-[3px] border-[#6C7B96] h-20 rounded-lg justify-self-end">
+            <textarea value={inputText} onChange={(e) => setInputText(e.target.value)} className="absolute w-full h-28 py-2 px-2.5 text-[#3a1d08] font-myriadl bg-[url('https://i.imgur.com/c89MDBb.jpeg')] border border-[3px] border-[#ece4a8] h-20 rounded-lg justify-self-end">
             </textarea>
             <Button onClick={chat} size="sm" gradientMonochrome="cyan" className="absolute bg-white right-5 bottom-[20px]">
               Submit
@@ -463,7 +466,7 @@ export default function Page() {
         <div className="hidden col-span-12 md:col-span-2 rounded-2xl md:flex flex-col">
           <div className="border-gradient w-full flex-grow flex flex-col">
             <div className="z-50 bg-dark w-full flex flex-col">
-              <p className="text-white text-lg font-conthrax py-2 text-center">List Chat</p>
+              <p className="text-[#264653] text-lg font-conthrax py-2 text-center">List Chat</p>
               <hr />
               <div className="flex flex-col flex-grow overflow-y-auto max-h-[80vh]">
                 {listChat.map((el, i) => {
@@ -475,8 +478,8 @@ export default function Page() {
                         key={i}
                         className="flex gap-2 p-2 group cursor-pointer pt-3.5"
                       >
-                        <div className={!chatId ? "w-2 h-2 rounded-full bg-[#4DC0C7] mb-1.5" : "w-2 h-2 rounded-full bg-transparent mb-1.5"}></div>
-                        <div className="group-hover:text-[#7deaf2] text-white">
+                        <div className={!chatId ? "w-2 h-2 rounded-full mb-1.5" : "w-2 h-2 rounded-full bg-transparent mb-1.5"}></div>
+                        <div className="group-hover text-[#432d1d] hover:text-[#805f48]  ">
                           <p className="text-sm font-conthrax">{name}</p>
                           <p className="text-sm">{date}</p>
                           <p className="text-sm">{subhead}</p>
@@ -488,10 +491,10 @@ export default function Page() {
                       <div
                         onClick={() => moveId(`${id}`)}
                         key={i}
-                        className="group flex gap-2 p-2 cursor-pointer hover:text-[#A3E8EB]"
+                        className="group flex gap-2 p-2 cursor-pointer text-[#432d1d] hover:text-[#805f48] "
                       >
-                        <div className={Number(chatId) === id ? "w-2 h-2 rounded-full bg-[#4DC0C7] mb-1.5" : "w-2 h-2 rounded-full bg-transparent mb-1.5"}></div>
-                        <div className="text-white group-hover:text-[#7deaf2]">
+                        <div className={Number(chatId) === id ? "w-2 h-2 rounded-full bg-[#fffcdf] mb-1.5" : "w-2 h-2 rounded-full bg-transparent mb-1.5"}></div>
+                        <div className="text-[#432d1d] hover:text-[#c19b1e] ">
                           <p className="text-sm font-conthrax">{name}</p>
                           <p className="text-sm">{date}</p>
                           <p className="text-sm">{subhead}</p>
@@ -514,7 +517,7 @@ export default function Page() {
           </div>
         </div>
       </div >
-      <footer className="md:hidden mt-8 text-center text-white text-sm" >
+      <footer className="md:hidden mt-8 text-center text-[#432d1d] hover:text-[#805f48]  text-sm" >
         Travel Ease
       </footer>
     </div >
