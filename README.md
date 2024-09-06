@@ -1,5 +1,3 @@
----
-
 # Cursed Apple
 
 This repository contains the full stack for the **Cursed Apple** project, including the LLM, server, and client components.
