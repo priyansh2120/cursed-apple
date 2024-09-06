@@ -24,18 +24,7 @@ cd cursed-apple
    pip install -r requirements.txt
    ```
 
-3. Create a `.env` file inside the `rag` directory using the provided template:
-   ```
-   GROQ_API_KEY=YOUR_GROQ_API_KEY
-   TIDB_HOST=YOUR_TIDB_HOST
-   TIDB_PORT=YOUR_TIDB_PORT
-   TIDB_USERNAME=YOUR_TIDB_USERNAME
-   TIDB_PASSWORD=YOUR_TIDB_PASSWORD
-   TIDB_DATABASE=YOUR_TIDB_DATABASE
-   VECTOR_TABLE_NAME=YOUR_VECTOR_TABLE_NAME
-   GEMINI_API_KEY=YOUR_GEMINI_API_KEY
-   VISUAL_CROSSING_API_KEY=YOUR_VISUAL_CROSSING_API_KEY
-   ```
+
 
 ### Set up the Server:
 
